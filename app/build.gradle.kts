@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+
+    kotlin("plugin.serialization") version "2.0.0"
 }
 
 android {
@@ -50,6 +52,9 @@ android {
 }
 
 dependencies {
+    implementation("androidx.datastore:datastore:1.1.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-protobuf:1.3.2")
+
     implementation("androidx.compose.runtime:runtime-livedata:1.6.8")
 
     implementation(libs.androidx.core.ktx)

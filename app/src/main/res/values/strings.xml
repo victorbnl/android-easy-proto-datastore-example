@@ -5,4 +5,7 @@
     <string name="username">Username</string>
     <string name="age">Age</string>
     <string name="notifications">Enable notifications</string>
+
+    <string name="load">Load</string>
+    <string name="save">Save</string>
 </resources>

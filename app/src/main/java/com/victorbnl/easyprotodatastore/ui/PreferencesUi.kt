@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
@@ -34,6 +35,9 @@ class PreferencesUi(private val viewModel: PreferencesViewModel) {
                     )
             ) {
                 Preferences()
+                Buttons(
+                    modifier = Modifier.fillMaxWidth()
+                )
             }
         }
     }
@@ -41,7 +45,7 @@ class PreferencesUi(private val viewModel: PreferencesViewModel) {
     @Composable
     fun Preferences() {
         val preferencesState by viewModel.preferences.observeAsState()
-        preferencesState!!.let { preferences ->
+        preferencesState?.let { preferences ->
             Column(
                 modifier = Modifier.fillMaxWidth(),
                 verticalArrangement = Arrangement.spacedBy(12.dp)
@@ -83,6 +87,21 @@ class PreferencesUi(private val viewModel: PreferencesViewModel) {
                         }
                     )
                 }
+            }
+        }
+    }
+
+    @Composable
+    fun Buttons(modifier: Modifier) {
+        Row(
+            modifier = modifier,
+            horizontalArrangement = Arrangement.SpaceEvenly
+        ) {
+            Button(onClick = { viewModel.load() }) {
+                Text(stringResource(R.string.load))
+            }
+            Button(onClick = { viewModel.save() }) {
+                Text(stringResource(R.string.save))
             }
         }
     }
