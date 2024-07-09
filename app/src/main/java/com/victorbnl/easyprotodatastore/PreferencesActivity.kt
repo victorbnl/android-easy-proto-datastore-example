@@ -1,19 +1,19 @@
 package com.victorbnl.easyprotodatastore
 
-import MainUi
+import PreferencesUi
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.victorbnl.easyprotodatastore.ui.theme.EasyProtoDataStoreTheme
 
-class MainActivity : ComponentActivity() {
+class PreferencesActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             EasyProtoDataStoreTheme {
-                MainUi().MainScreen()
+                PreferencesUi().MainScreen()
             }
         }
     }
