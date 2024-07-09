@@ -16,6 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.victorbnl.easyprotodatastore.R
 import com.victorbnl.easyprotodatastore.viewmodels.PreferencesViewModel
 
@@ -28,12 +29,10 @@ class PreferencesUi(private val viewModel: PreferencesViewModel) {
                     .fillMaxSize()
                     .padding(innerPadding)
                     .padding(32.dp),
-                verticalArrangement = Arrangement
-                    .spacedBy(
-                        32.dp,
-                        alignment = Alignment.CenterVertically
-                    )
+                verticalArrangement = Arrangement.SpaceEvenly,
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
+                Text(stringResource(R.string.title), fontSize = 28.sp)
                 Preferences()
                 Buttons(
                     modifier = Modifier.fillMaxWidth()
